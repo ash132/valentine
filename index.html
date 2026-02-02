@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+
+    .buttons {
+      position: relative;
+      width: 300px;
+      height: 150px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #2ecc71;
+      color: white;
+    }
+
+    #no {
+      background-color: #e74c3c;
+      color: white;
+      position: absolute;
+      left: 150px;
+      top: 0;
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    video, img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes">Yes 💘</button>
+    <button id="no">No 😏</button>
+  </div>
+
+  <div id="surprise">
+    <h2>YAY!!! I knew it 😍</h2>
+    <!-- Replace video.mp4 OR image.jpg with your file -->
+    <video controls autoplay loop>
+      <source src="Olivia.mp4" type="video/mp4">
+    </video>
+       <p>You just made my day ❤️</p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const surprise = document.getElementById("surprise");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 250;
+      const y = Math.random() * 120;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.querySelector(".buttons").style.display = "none";
+      surprise.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
